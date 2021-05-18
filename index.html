@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANGMAN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:site_name" content="HANGMAN">
+    <meta property="og:title" content="HANGMAN">
+    <meta property="og:author" content="Jose Alejandro Concepción Alvarez">
+    <meta property="og:description" content="Simple Vanilla JavaScript app for the hangman game">
+    <meta property="og:image" content="http://ngp-hangman-js.surge.sh/share.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="256">
+    <meta property="og:image:height" content="256">
+    <meta property="og:url" content="http://ngp-hangman-js.surge.sh/">
+</head>
+
+<body>
+
+    <h1 style="text-align: center;margin-bottom: 0px;">Hangman</h1>
+    <p style="text-align: center;">
+        Find the hidden word - enter a letter
+    </p>
+
+    <div class="game-container">
+
+        <svg height="250" width="200" class="figure-container">
+            <line x1="60" y1="20" x2="140" y2="20" />
+            <line x1="140" y1="20" x2="140" y2="50" />
+            <line x1="60" y1="20" x2="60" y2="200" />
+            <line x1="30" y1="200" x2="90" y2="200" />
+
+            <circle class="figure-part" id="head" cx="140" cy="70" r="20" />
+            <circle class="figure-part" id="eye1" cx="133" cy="68" r="2" />
+            <circle class="figure-part" id="eye2" cx="146" cy="68" r="2" />
+
+            <line class="figure-part" id="body" x1="140" y1="90" x2="140" y2="140" />
+            <line class="figure-part" id="rightArm" x1="140" y1="105" x2="120" y2="120" />
+            <line class="figure-part" id="leftArm" x1="140" y1="105" x2="160" y2="120" />
+            <line class="figure-part" id="rightLeg" x1="140" y1="140" x2="120" y2="160" />
+            <line class="figure-part" id="leftLeg" x1="140" y1="140" x2="160" y2="160" />
+        </svg>
+
+        <div id="wrong-words" class="wrong-words">
+            <p style="margin-bottom: 0px;">Wrong letters:</p>
+            <!-- <span style="font-size: 20px; font-weight: bold;">l,y,a,v</span> -->
+        </div>
+        <button id="next">Next</button>
+        <div id="letter-container" class='letter-container'>
+
+        </div>
+
+        <div id="keyboard" class="keyboard">
+            <div class="row">
+                <button class="keyBtn q">q</button>
+                <button class="keyBtn w">w</button>
+                <button class="keyBtn e">e</button>
+                <button class="keyBtn r">r</button>
+                <button class="keyBtn t">t</button>
+                <button class="keyBtn y">y</button>
+                <button class="keyBtn u">u</button>
+                <button class="keyBtn i">i</button>
+                <button class="keyBtn o">o</button>
+                <button class="keyBtn p">p</button>
+            </div>
+            <div class="row">
+                <button class="keyBtn a">a</button>
+                <button class="keyBtn s">s</button>
+                <button class="keyBtn d">d</button>
+                <button class="keyBtn f">f</button>
+                <button class="keyBtn t">t</button>
+                <button class="keyBtn g">g</button>
+                <button class="keyBtn h">h</button>
+                <button class="keyBtn j">j</button>
+                <button class="keyBtn k">k</button>
+                <button class="keyBtn l">l</button>
+            </div>
+            <div class="row">
+                <button class="keyBtn z">z</button>
+                <button class="keyBtn x">x</button>
+                <button class="keyBtn c">c</button>
+                <button class="keyBtn v">v</button>
+                <button class="keyBtn b">b</button>
+                <button class="keyBtn n">n</button>
+                <button class="keyBtn m">m</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="popop" class="popop-container">
+        <div class="popop">
+            <div id="popop-msg"></div>
+            <button id="restartMatch">play again</button>
+        </div>
+
+    </div>
+
+    <div id="notification" class="notification">
+        <p>You already entered this letter</p>
+    </div>
+
+    <script src="./script.js">
+
+    </script>
+</body>
+
+</html>
